@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvptngvjn1pl3"]
+
+[ext_resource type="Texture2D" uid="uid://cixtjxy4g171l" path="res://graphics/car/main.png" id="1_i2wjc"]
+[ext_resource type="Texture2D" uid="uid://cp7iwsv8ctuya" path="res://graphics/car/turret.png" id="2_gtbsk"]
+
+[node name="car body" type="StaticBody2D"]
+
+[node name="Car" type="Sprite2D" parent="."]
+texture = ExtResource("1_i2wjc")
+
+[node name="Turret" type="Sprite2D" parent="Car"]
+position = Vector2(0, -4)
+texture = ExtResource("2_gtbsk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-3, 1)
+polygon = PackedVector2Array(-159, -150, -87, -184, 91, -186, 161, -143, 176, 219, 55, 235, 35, 296, -38, 297, -54, 236, -179, 219, -172, 34)

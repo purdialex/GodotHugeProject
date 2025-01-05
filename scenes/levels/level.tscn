@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb0by4aroxlxb"]
+[gd_scene load_steps=7 format=3 uid="uid://bb0by4aroxlxb"]
 
-[ext_resource type="Texture2D" uid="uid://ciub3uovq5x0b" path="res://icon.svg" id="1_illdj"]
-[ext_resource type="Script" path="res://scenes/sprite_2d.gd" id="2_xlrpf"]
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_53ovt"]
+[ext_resource type="PackedScene" uid="uid://dvptngvjn1pl3" path="res://scenes/objects/car body.tscn" id="4_6yrn8"]
+[ext_resource type="PackedScene" uid="uid://dqtnhyr5whcw7" path="res://scenes/player/player.tscn" id="4_vggvd"]
+[ext_resource type="PackedScene" uid="uid://fscegyg8kjmy" path="res://scenes/objects/bed.tscn" id="5_72qt5"]
+[ext_resource type="PackedScene" uid="uid://dda3il46ag0b5" path="res://scenes/enemies/drone.tscn" id="5_rj8ck"]
+[ext_resource type="PackedScene" uid="uid://ddg6uc4pxowqo" path="res://scenes/objects/billboard.tscn" id="6_jnlhk"]
 
 [node name="Level" type="Node2D"]
+position = Vector2(1.69791, -2.11801)
+script = ExtResource("1_53ovt")
 
-[node name="Logo" type="Sprite2D" parent="."]
-texture = ExtResource("1_illdj")
-script = ExtResource("2_xlrpf")
+[node name="Bed" parent="." instance=ExtResource("5_72qt5")]
+position = Vector2(315.302, 440.118)
+
+[node name="car body" parent="." instance=ExtResource("4_6yrn8")]
+position = Vector2(998.302, 159.118)
+scale = Vector2(0.7, 0.7)
+
+[node name="Drone" parent="." instance=ExtResource("5_rj8ck")]
+position = Vector2(79.3021, 82.118)
+
+[node name="Billboard" parent="." instance=ExtResource("6_jnlhk")]
+position = Vector2(442.302, 104.118)
+rotation = -0.261799
+scale = Vector2(0.4, 0.4)
+
+[node name="Player" parent="." instance=ExtResource("4_vggvd")]
+position = Vector2(770.302, 126.118)
