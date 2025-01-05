@@ -12,8 +12,6 @@ script = ExtResource("1_53ovt")
 position = Vector2(-3.69791, 1.11801)
 
 [node name="Player" parent="." instance=ExtResource("4_vggvd")]
-position = Vector2(902.302, 546.118)
+position = Vector2(773.302, 537.118)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
-[connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
-[connection signal="laser" from="Player" to="." method="_on_player_laser"]
