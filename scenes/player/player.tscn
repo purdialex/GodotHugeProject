@@ -11,7 +11,8 @@ position = Vector2(-3, 1)
 script = ExtResource("1_6jccu")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
-position = Vector2(3, -26)
+position = Vector2(32, -6)
+rotation = 1.5708
 texture = ExtResource("1_4sibq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -29,13 +30,13 @@ wait_time = 2.0
 position = Vector2(-12, -4)
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(24, -115)
+position = Vector2(138, 9)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(34, -118)
+position = Vector2(138, 15)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(44, -115)
+position = Vector2(136, 26)
 
 [connection signal="grenade" from="." to="." method="_on_grenade"]
 [connection signal="timeout" from="LaserReloadTimer" to="." method="_on_timer_timeout"]
