@@ -114,7 +114,7 @@ position = Vector2(-20.6979, -157.882)
 scale = Vector2(1.1, 1.1)
 
 [node name="Player" parent="." instance=ExtResource("4_vggvd")]
-position = Vector2(902.302, 546.118)
+position = Vector2(3970.3, 810.118)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.6, 0.6)
