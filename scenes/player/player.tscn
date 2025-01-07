@@ -1,10 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqtnhyr5whcw7"]
+[gd_scene load_steps=9 format=3 uid="uid://dqtnhyr5whcw7"]
 
 [ext_resource type="Texture2D" uid="uid://bcx2verc7lwbh" path="res://graphics/player/player.png" id="1_4sibq"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_6jccu"]
+[ext_resource type="Texture2D" uid="uid://bkvslt0xymyrj" path="res://graphics/decals/white.png" id="3_63ggn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fih3c"]
 radius = 69.0
+
+[sub_resource type="Gradient" id="Gradient_o168w"]
+colors = PackedColorArray(0.427451, 1, 1, 0.564706, 0.627451, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mlnif"]
+gradient = SubResource("Gradient_o168w")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vlh4t"]
+particle_flag_disable_z = true
+spread = 15.268
+initial_velocity_min = 750.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.7
+color = Color(0.427451, 1, 1, 0.564706)
+color_ramp = SubResource("GradientTexture1D_mlnif")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cfa8s"]
+polygon = PackedVector2Array(38, 33, 8, 52, -33, 55, -55, 41, -65, 12, -65, -37, -27, -74, 32, -67, 44, -37, 73, -20, 123, -16, 133, 5, 131, 18, 130, 28, 101, 33, 86, 48, 59, 47)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-3, 1)
@@ -38,6 +59,18 @@ position = Vector2(138, 15)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
 position = Vector2(136, 26)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(126, 15)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_vlh4t")
+texture = ExtResource("3_63ggn")
+lifetime = 0.2
+one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-2, 0)
+occluder = SubResource("OccluderPolygon2D_cfa8s")
 
 [connection signal="grenade" from="." to="." method="_on_grenade"]
 [connection signal="timeout" from="LaserReloadTimer" to="." method="_on_timer_timeout"]

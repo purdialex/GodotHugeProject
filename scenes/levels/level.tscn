@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bb0by4aroxlxb"]
+[gd_scene load_steps=19 format=4 uid="uid://bb0by4aroxlxb"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_53ovt"]
 [ext_resource type="Texture2D" uid="uid://bwkfixwhehu4t" path="res://graphics/ground/stones.png" id="2_kohit"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://f3rmbf0yyrux" path="res://graphics/decals/moss/moss_5.png" id="8_tivmp"]
 [ext_resource type="Texture2D" uid="uid://dylhc7siut52j" path="res://graphics/tilesets/outside_walls.png" id="9_cfqh5"]
 [ext_resource type="Texture2D" uid="uid://cptcvoni4w37q" path="res://graphics/tilesets/soil.png" id="10_5yaw3"]
+[ext_resource type="PackedScene" uid="uid://bq4wi7eqh1exb" path="res://scenes/objects/steam_vent.tscn" id="11_g62a1"]
 [ext_resource type="PackedScene" uid="uid://rwhnq5pbqnre" path="res://scenes/houses/house.tscn" id="13_j8e7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3kvw"]
@@ -105,6 +106,9 @@ texture = ExtResource("5_gu5if")
 tile_map_data = PackedByteArray("AAAEAP//AAAAAAAAAAAFAP//AAABAAAAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAABAAAAAAAKAP//AAABAAAAAAALAP//AAACAAEAAAAKAAQAAAABAAAAAAAJAAQAAAABAAAAAAAHAAQAAAABAAAAAAAIAAQAAAABAAAAAAAGAAQAAAABAAAAAAAFAAQAAAABAAAAAAAEAAQAAAABAAAAAAADAAQAAAABAAAAAAACAAQAAAABAAAAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAD//wQAAAABAAAAAAD+/wQAAAABAAAAAAD9/wQAAAABAAAAAAD8/wQAAAABAAAAAAD7/wQAAAABAAAAAAD6/wQAAAABAAAAAAD5/wQAAAABAAAAAAD4/wQAAAABAAAAAAD3/wQAAAABAAAAAAD2/wQAAAABAAAAAAD1/wQAAAABAAIAAAD1/wMAAAAAAAIAAAD1/wIAAAAAAAIAAAD1/wEAAAAAAAIAAAD1/wAAAAAAAAIAAAD1////AAABAAEAAAD2////AAABAAAAAAD3////AAABAAAAAAD4////AAABAAAAAAD5////AAABAAAAAAD6////AAABAAAAAAD7////AAABAAAAAAD8////AAACAAIAAAD8//7/AAAAAAIAAAD8//3/AAAAAAIAAAD8//z/AAAAAAIAAAD+////AAABAAIAAAD8//v/AAABAAEAAAD+//v/AAACAAEAAAD+//z/AAAAAAIAAAD+//3/AAAAAAIAAAD+//7/AAAAAAIAAAD9//v/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_xk84r")
 
+[node name="SteamVent" parent="Ground" instance=ExtResource("11_g62a1")]
+position = Vector2(4853.3, 89.118)
+
 [node name="House" parent="." instance=ExtResource("13_j8e7x")]
 position = Vector2(6144.3, 861.118)
 rotation = 2.09439
@@ -121,6 +125,12 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(9471.3, -3029.88)
+color = Color(0.839216, 0.0745098, 0, 1)
+energy = 0.4
+blend_mode = 1
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
