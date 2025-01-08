@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf4aea636uuvd"]
+
+[ext_resource type="PackedScene" uid="uid://dyek2vs4iqqf2" path="res://scenes/container/item_container.tscn" id="1_xlf3i"]
+[ext_resource type="Script" path="res://scenes/container/crate.gd" id="2_bsqtd"]
+[ext_resource type="Texture2D" uid="uid://drmm7p8om18um" path="res://graphics/objects/box/base.png" id="2_yydri"]
+[ext_resource type="Texture2D" uid="uid://da3ao1qoux168" path="res://graphics/objects/box/lid.png" id="3_pwhiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ysll"]
+size = Vector2(402, 181)
+
+[node name="Crate" instance=ExtResource("1_xlf3i")]
+script = ExtResource("2_bsqtd")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_yydri")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_7ysll")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="2"]
+position = Vector2(1, 6)
+texture = ExtResource("3_pwhiu")

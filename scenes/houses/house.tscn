@@ -1,240 +1,15 @@
-[gd_scene load_steps=20 format=4 uid="uid://rwhnq5pbqnre"]
+[gd_scene load_steps=9 format=4 uid="uid://rwhnq5pbqnre"]
 
 [ext_resource type="Script" path="res://scenes/houses/house.gd" id="1_e4lbj"]
-[ext_resource type="Texture2D" uid="uid://bb8ow80dwkasx" path="res://graphics/tilesets/interior.png" id="1_fvanp"]
+[ext_resource type="TileSet" uid="uid://2p1krvvrovkg" path="res://scenes/levels/house_floor.tres" id="2_fjbtn"]
 [ext_resource type="PackedScene" uid="uid://dg8jji2mhloiy" path="res://scenes/objects/simple_light.tscn" id="2_u6lx7"]
 [ext_resource type="PackedScene" uid="uid://bqd0x2plrdfp1" path="res://scenes/objects/wall_lamp.tscn" id="3_nfbyq"]
+[ext_resource type="TileSet" uid="uid://drkk0uv7xdfsv" path="res://scenes/levels/house_innerwall.tres" id="3_updon"]
+[ext_resource type="TileSet" uid="uid://dpw1jkewirq1q" path="res://scenes/levels/house_outerwall.tres" id="4_hgfcr"]
+[ext_resource type="PackedScene" uid="uid://dybt410l57c0w" path="res://scenes/objects/light_fan_animation.tscn" id="5_vdfkk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxa87"]
 size = Vector2(2492, 1718)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6hse"]
-resource_name = "interior"
-texture = ExtResource("1_fvanp")
-texture_region_size = Vector2i(390, 390)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-6:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-6:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-3:6/0 = 0
-5:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-6:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-5:8/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_r87t4"]
-tile_size = Vector2i(390, 390)
-sources/0 = SubResource("TileSetAtlasSource_k6hse")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_caah0"]
-texture = ExtResource("1_fvanp")
-texture_region_size = Vector2i(390, 390)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 2, 102, -64, 170, -74, 195, -70, 195, 72, 155, 77, 112, 96, 80, 144, 69, 195, -80, 195, -58, 90)
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-6:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-6:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-0:6/0 = 0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, -22, 195, -22, 195, 30, -195, 24)
-1:6/0 = 0
-1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-18, -195, 26, -195, 22, 195, -22, 195)
-3:6/0 = 0
-3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22, -28, -20, -195, 28, -195, 22, -22, 195, -20, 195, 24, 24, 22, 24, 195, -24, 195, -24, 28, -195, 26, -195, -26)
-5:6/0 = 0
-5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(20, 16, -22, 20, -22, 195, 18, 195)
-0:7/0 = 0
-0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(195, -24, 195, 24, 24, 22, 24, 195, -24, 195, -24, 28, -16, -22)
-1:7/0 = 0
-1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(18, -16, 24, 195, -24, 195, -24, 28, -195, -16)
-1:7/0/physics_layer_0/polygon_1/points = PackedVector2Array(-195, -18, -195, -14, -2, -14, -22, 22, -195, 24)
-2:7/0 = 0
-2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22, -28, 22, -22, 195, -16, 195, 24, 24, 22, 24, 195, -24, 195, -24, 28, -195, 26, -195, -26)
-3:7/0 = 0
-3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, 20, -195, -22, -18, -22, -18, -195, 20, -195, 20, 195, -20, 195, -26, 18)
-4:7/0 = 0
-4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -20, 20, 22, 195, 22, 195, -18)
-6:7/0 = 0
-6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 20, -20, -22, -195, -22, -195, 18)
-0:8/0 = 0
-0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-28, 22, -16, -195, 20, -195, 22, -18, 195, -16, 195, 18, -22, 20)
-1:8/0 = 0
-1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-26, -20, -24, -195, 26, -195, 16, 22, -195, 18, -195, -24)
-2:8/0 = 0
-2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22, -195, 26, -195, 24, -24, 195, -20, 195, 28, 24, 24, 26, 195, -24, 195)
-3:8/0 = 0
-3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -195, 22, -195, 22, -18, 195, -18, 195, 20, -195, 20, -195, -20, -18, -26)
-5:8/0 = 0
-5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -16, 22, -20, 22, -195, -18, -195)
-
-[sub_resource type="TileSet" id="TileSet_y8c43"]
-tile_size = Vector2i(390, 390)
-physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 11
-sources/1 = SubResource("TileSetAtlasSource_caah0")
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n6oun"]
-polygon = PackedVector2Array(195, 70, 133.237, 83.7847, 82.8398, 132.922, 69.5, 195, -72.7604, 195, -68.9807, 133.552, -35.5928, 44.0972, 34.9628, -28.9782, 110.5, -69, 195, -71.8155)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h2fjm"]
-polygon = PackedVector2Array(70, -195, 70, 195, -78, 195, -70, -195)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wtggn"]
-polygon = PackedVector2Array(195, -70, 133.237, -83.7847, 82.8398, -132.922, 69.5, -195, -72.7604, -195, -68.9807, -133.552, -35.5928, -44.0972, 34.9628, 28.9782, 110.5, 69, 195, 71.8155)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rww4f"]
-polygon = PackedVector2Array(-195, -70, 195, -70, 195, 78, -195, 70)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_65k7c"]
-polygon = PackedVector2Array(195, 70, -195, 70, -195, -78, 195, -70)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dn6fo"]
-polygon = PackedVector2Array(-195, 70, -133.237, 83.7847, -82.8398, 132.922, -69.5, 195, 72.7604, 195, 68.9807, 133.552, 35.5928, 44.0972, -34.9628, -28.9782, -110.5, -69, -195, -71.8155)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_18rdk"]
-polygon = PackedVector2Array(70, -195, 70, 195, -78, 195, -70, -195)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ggxfl"]
-polygon = PackedVector2Array(-195, -70, -133.237, -83.7847, -82.8398, -132.922, -69.5, -195, 72.7604, -195, 68.9807, -133.552, 35.5928, -44.0972, -34.9628, 28.9782, -110.5, 69, -195, 71.8155)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jql7o"]
-texture = ExtResource("1_fvanp")
-texture_region_size = Vector2i(390, 390)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-3:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_n6oun")
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-41.0122, 32.5269, 67.8823, -52.3259, 195, -88.1945, 195, 75.5953, 110.309, 96.1665, 73.5391, 195, -80.6102, 195)
-4:0/0 = 0
-4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_rww4f")
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, -53.7402, -195, -70.7107, 195, -70.7107, 195, 74.9533, -195, 70.7107)
-5:0/0 = 0
-5:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_dn6fo")
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, -82.0244, -42.4264, -38.1838, 55.1543, 62.2254, 73.5391, 195, -80.6102, 195, -80.6102, 140.007, -128.693, 86.267, -195, 76.3676)
-6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(79, 195, 67, 168, -59, 168, -69, 195)
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-3:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_h2fjm")
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-70.7107, -195, 73.5391, -195, 74.9533, 195, -72.1249, 195)
-5:1/0 = 0
-5:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_18rdk")
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-70.7107, -195, 73.5391, -195, 74.9533, 195, -72.1249, 195)
-6:1/0 = 0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-79, -195, -67, -168, 59, -168, 69, -195)
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-3:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_wtggn")
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.82843, -7.07104, -67.8823, -97.5807, -76.3676, -195, 72.1249, -195, 79.196, -147.078, 103.238, -104.652, 148.492, -74.9533, 195, -70.7107, 195, 74.9533, 148.492, 73.5391, 91.9239, 60.8112, 45.2548, 41.0122)
-4:2/0 = 0
-4:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_65k7c")
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, -53.7402, -195, -70.7107, 195, -70.7107, 195, 74.9533, -195, 70.7107)
-5:2/0 = 0
-5:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ggxfl")
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, 77.7817, -195, -70.7107, -141.421, -77.7817, -110.309, -103.238, -77.7818, -141.421, -76.3676, -195, 72.1249, -195, 70.7107, -156.978, 67.8823, -134.35, 62.2254, -108.894, 56.5685, -79.1959, 39.598, -52.3259, 8.48529, 5.65686, -98.995, 57.9828)
-6:2/0 = 0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(70.7107, 195, 72.1249, 167.938, -71.4178, 168.645, -72.2267, 195)
-6:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-72.2267, -195, -72.2267, -170.249, 71.433, -170.249, 71.433, -195)
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-6:3/0 = 0
-6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, -79, -168, -67, -168, 59, -195, 69)
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-6:4/0 = 0
-6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(195, -79, 168, -67, 168, 59, 195, 69)
-0:5/0 = 0
-1:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-3:6/0 = 0
-5:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-6:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-5:8/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_igfap"]
-tile_size = Vector2i(390, 390)
-occlusion_layer_0/light_mask = 1
-physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 11
-sources/0 = SubResource("TileSetAtlasSource_jql7o")
 
 [node name="House" type="Area2D"]
 collision_layer = 16
@@ -242,29 +17,38 @@ collision_mask = 17
 script = ExtResource("1_e4lbj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(579, 186)
 shape = SubResource("RectangleShape2D_pxa87")
 
 [node name="floor" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD/////AAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAADAP//AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAABAAIAAAABAAIAAAAAAAIAAAABAAIAAAD//wIAAAABAAIAAAD+/wIAAAAAAAIAAAD+/wEAAAAAAAEAAAD+/wAAAAAAAAEAAAD+////AAAAAAEAAAD+//7/AAAAAAAAAAD///7/AAABAAAAAAAAAP7/AAABAAAAAAABAP7/AAABAAAAAAACAP7/AAABAAAAAAADAP7/AAABAAAAAAAEAP7/AAACAAAAAAAEAP//AAACAAEAAAAEAAAAAAACAAEAAAAEAAEAAAACAAEAAAAEAAIAAAACAAIAAAACAAIAAAACAAQAAAADAAIAAAACAAQAAAA=")
-tile_set = SubResource("TileSet_r87t4")
+tile_set = ExtResource("2_fjbtn")
 
 [node name="innerwall" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAAAAQADAAYAAAACAAAAAQAAAAYAAAADAAAAAQAGAAcAAAAAAAAAAQAAAAYAAAABAP7/AQAFAAYAAAD//wAAAQAEAAcAAAABAAIAAQAFAAgAAAABAAEAAQABAAYAAAA=")
-tile_set = SubResource("TileSet_y8c43")
+tile_set = ExtResource("3_updon")
 
 [node name="outerwall" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAEAAIAAAAFAAIAAAAEAAEAAAAFAAEAAAAEAAAAAAAFAAEAAAAEAP//AAAFAAEAAAAEAP7/AAAFAAAAAAADAP7/AAAEAAAAAAACAP7/AAAEAAAAAAABAP7/AAAEAAAAAAAAAP7/AAAEAAAAAAD///7/AAAEAAAAAAD+//7/AAADAAAAAAD+////AAADAAEAAAD+/wAAAAADAAEAAAD+/wEAAAADAAEAAAD+/wIAAAADAAIAAAD//wIAAAAEAAIAAAAAAAIAAAAEAAIAAAABAAIAAAAEAAIAAAACAAIAAAAGAAMAAAADAAIAAAAGAAQAAAA=")
-tile_set = SubResource("TileSet_igfap")
+tile_set = ExtResource("4_hgfcr")
 
 [node name="SimpleLight" parent="." instance=ExtResource("2_u6lx7")]
+visible = false
 position = Vector2(189, -498)
 scale = Vector2(1.4, 1.4)
 
 [node name="wall_lamp" parent="." instance=ExtResource("3_nfbyq")]
+visible = false
 position = Vector2(1696, -178)
 rotation = 0.424961
 scale = Vector2(0.6, 0.6)
+
+[node name="light_fan_animation" parent="." instance=ExtResource("5_vdfkk")]
+visible = false
+position = Vector2(998.936, -237.54)
+rotation = -2.09439
+scale = Vector2(0.674999, 0.6685)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
