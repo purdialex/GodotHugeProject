@@ -52,13 +52,13 @@ wait_time = 2.0
 position = Vector2(-12, -4)
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(138, 9)
+position = Vector2(166, 8)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(138, 15)
+position = Vector2(166, 15)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(136, 26)
+position = Vector2(166, 24)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(126, 15)
@@ -69,6 +69,7 @@ lifetime = 0.2
 one_shot = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 position = Vector2(-2, 0)
 occluder = SubResource("OccluderPolygon2D_cfa8s")
 

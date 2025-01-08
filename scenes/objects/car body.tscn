@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cp7iwsv8ctuya" path="res://graphics/car/turret.png" id="2_gtbsk"]
 
 [node name="car body" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
 
 [node name="Car" type="Sprite2D" parent="."]
 texture = ExtResource("1_i2wjc")
