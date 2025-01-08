@@ -1,16 +1,18 @@
 extends Area2D
 
-signal player_entered
-signal player_exited
 
-func _on_area_entered(CharacterBody2D) -> void:
-	print("Player has entered")
+signal player_entered_house(body)
+signal player_exited_house(body)
 
-
-func _on_mouse_entered() -> void:
-	player_entered.emit()
-	
+#func _on_area_entered(body) -> void:
+	#player_entered_house.emit(body)
 
 
-func _on_mouse_exited() -> void:
-	player_exited.emit()
+func _on_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:  
+		player_entered_house.emit(body)
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D: 
+		player_exited_house.emit(body)

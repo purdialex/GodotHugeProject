@@ -22,3 +22,15 @@ func _on_player_grenade(pos, direction) -> void:
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
+
+
+
+func _on_house_body_entered(body) -> void:
+	get_tree().create_tween().tween_property($Player/Camera2D,"zoom", Vector2(1,1), 1)
+	print(body)
+	
+
+
+func _on_house_body_exited(body: CharacterBody2D) -> void:
+	get_tree().create_tween().tween_property($Player/Camera2D,"zoom", Vector2(0.6,0.6), 1.5)
+	print(body)

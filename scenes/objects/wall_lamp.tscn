@@ -7,6 +7,8 @@
 polygon = PackedVector2Array(-169, -76, -113, -85, -92, -137, -152, -221, -219, -238, -792, -238, -875, -207, -921, -145, -906, -84, -742, -83, -738, -177, -273, -179, -269, -78)
 
 [node name="wall_lamp" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wg048")
