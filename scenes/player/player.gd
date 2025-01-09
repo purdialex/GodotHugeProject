@@ -12,9 +12,6 @@ signal grenade(pos, direction)
 
 var speed = 800
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,7 +28,8 @@ func _process(_delta: float) -> void:
 	move_and_slide()
 	var player_direction = (get_global_mouse_position() - position).normalized()
 	#laser shooting input
-	if(Input.is_action_pressed("primary action") && can_laser == true):
+	if(Input.is_action_pressed("primary action") && can_laser == true and Globals.laser_amount > 0):
+		Globals.laser_amount -=1
 		$GPUParticles2D.emitting = true
 		#Randomly select a marker2d for the laser start
 		var laser_markers = $LaserStartPositions.get_children()
@@ -44,7 +42,8 @@ func _process(_delta: float) -> void:
 		
 		
 	#grenade throwing input
-	if(Input.is_action_pressed("secondary action") && can_grenade == true):
+	if(Input.is_action_pressed("secondary action") && can_grenade == true and Globals.grenade_amount > 0):
+		Globals.grenade_amount -=1
 		can_grenade = false	
 		$GrenadeReloadTimer.start()
 		var pos = $LaserStartPositions.get_children()[1].global_position
