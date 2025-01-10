@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b81bs0cmmwhvw"]
+[gd_scene load_steps=13 format=4 uid="uid://b81bs0cmmwhvw"]
 
 [ext_resource type="PackedScene" uid="uid://bb0by4aroxlxb" path="res://scenes/levels/level.tscn" id="1_wcca7"]
 [ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_d4dbo"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dg8jji2mhloiy" path="res://scenes/objects/simple_light.tscn" id="7_civcq"]
 [ext_resource type="Texture2D" uid="uid://d1o7df067fmgi" path="res://graphics/lights/textures/circle.png" id="8_gt8pe"]
 [ext_resource type="Texture2D" uid="uid://tcwstkvoi1do" path="res://graphics/lights/overlays/hole.png" id="9_s3460"]
+[ext_resource type="PackedScene" uid="uid://blv4gh3q8r42v" path="res://scenes/items/item.tscn" id="11_pmwt0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwnw1"]
 size = Vector2(463, 129)
@@ -63,6 +64,7 @@ scale = Vector2(2, 2)
 
 [node name="Player" parent="." index="6"]
 position = Vector2(-1884.7, 2507.12)
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" parent="Player" index="7"]
 position = Vector2(0, 15.0002)
@@ -115,5 +117,8 @@ blend_mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
 position = Vector2(-1877.2, 2931.62)
 shape = SubResource("RectangleShape2D_lwnw1")
+
+[node name="Item" parent="." index="11" instance=ExtResource("11_pmwt0")]
+position = Vector2(-966.698, 949.118)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

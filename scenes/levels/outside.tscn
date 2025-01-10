@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b31veboy7qkp8"]
+[gd_scene load_steps=22 format=4 uid="uid://b31veboy7qkp8"]
 
 [ext_resource type="PackedScene" uid="uid://bb0by4aroxlxb" path="res://scenes/levels/level.tscn" id="1_6765g"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_0qbyr"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://dylhc7siut52j" path="res://graphics/tilesets/outside_walls.png" id="10_8eps5"]
 [ext_resource type="PackedScene" uid="uid://bq4wi7eqh1exb" path="res://scenes/objects/steam_vent.tscn" id="11_saqtj"]
 [ext_resource type="PackedScene" uid="uid://rwhnq5pbqnre" path="res://scenes/houses/house.tscn" id="13_kk6aw"]
+[ext_resource type="PackedScene" uid="uid://blv4gh3q8r42v" path="res://scenes/items/item.tscn" id="15_u4omx"]
+[ext_resource type="PackedScene" uid="uid://bf4aea636uuvd" path="res://scenes/container/crate.tscn" id="16_f2uav"]
+[ext_resource type="PackedScene" uid="uid://c6nowrjojx27o" path="res://scenes/container/toilet.tscn" id="17_rt7d6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl0q4"]
 texture = ExtResource("3_qwrc1")
@@ -60,6 +63,8 @@ scale = Vector2(3.3856, 2.06862)
 texture = ExtResource("2_ckguv")
 region_enabled = true
 region_rect = Rect2(-1986.82, -895.248, 7181.36, 3796.63)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="soil" type="TileMapLayer" parent="Ground" index="1"]
 tile_map_data = PackedByteArray("AAAJAAIAAAABAAEAAAAKAAIAAAABAAEAAAALAAIAAAACAAAAAAALAAMAAAACAAEAAAALAAQAAAACAAIAAAAKAAQAAAABAAIAAAAJAAQAAAABAAIAAAAIAAQAAAABAAIAAAAHAAQAAAAAAAIAAAAHAAMAAAAAAAAAAAAJAAMAAAABAAEAAAAKAAMAAAABAAEAAAAIAAIAAAAAAAEAAAAJAAEAAAABAAAAAAAKAAEAAAACAAAAAAAIAAMAAAABAAEAAAAIAAEAAAAAAAAAAAD3//3/AAAAAAAAAAD3//7/AAAAAAEAAAD3////AAAAAAIAAAD4//3/AAABAAAAAAD4//7/AAABAAEAAAD4////AAABAAIAAAD5//3/AAABAAAAAAD5//7/AAABAAEAAAD5////AAABAAIAAAD6//3/AAABAAAAAAD6//7/AAABAAEAAAD6////AAABAAIAAAD7//3/AAACAAAAAAD7//7/AAACAAEAAAD7////AAACAAIAAAAHAPv/AAABAAAAAAAHAPz/AAABAAEAAAAHAP3/AAABAAEAAAAHAP7/AAABAAEAAAAIAPv/AAABAAEAAAAIAPz/AAABAAEAAAAIAP3/AAABAAEAAAAIAP7/AAABAAEAAAAJAPv/AAABAAEAAAAJAPz/AAABAAEAAAAJAP3/AAABAAEAAAAJAP7/AAABAAEAAAAKAPv/AAABAAEAAAAKAPz/AAABAAEAAAAKAP3/AAABAAEAAAAKAP7/AAABAAEAAAALAPv/AAABAAEAAAALAPz/AAABAAEAAAALAP3/AAABAAEAAAALAP7/AAABAAEAAAAMAPv/AAABAAEAAAAMAPz/AAABAAEAAAAMAP3/AAABAAEAAAAMAP7/AAABAAEAAAANAPv/AAABAAEAAAANAPz/AAABAAEAAAANAP3/AAABAAEAAAANAP7/AAABAAEAAAAOAPv/AAABAAEAAAAOAPz/AAABAAEAAAAOAP3/AAABAAEAAAAOAP7/AAABAAEAAAAPAPv/AAABAAEAAAAPAPz/AAABAAEAAAAPAP3/AAABAAEAAAAPAP7/AAABAAEAAAAQAP7/AAABAAEAAAAQAPv/AAABAAEAAAAQAPz/AAABAAEAAAAQAP3/AAABAAEAAAD///v/AAAAAAEAAAD///z/AAAAAAEAAAD///3/AAAAAAEAAAAAAPv/AAABAAEAAAAAAPz/AAABAAEAAAAAAP3/AAABAAEAAAABAPv/AAABAAEAAAABAPz/AAABAAEAAAABAP3/AAABAAEAAAACAPv/AAABAAEAAAACAPz/AAABAAEAAAACAP3/AAABAAEAAAADAPv/AAABAAEAAAADAPz/AAABAAEAAAADAP3/AAABAAEAAAAEAPv/AAABAAEAAAAEAPz/AAABAAEAAAAEAP3/AAABAAEAAAAFAPv/AAABAAEAAAAFAPz/AAABAAEAAAAFAP3/AAABAAEAAAAGAPv/AAABAAAAAAAGAPz/AAABAAEAAAAGAP3/AAABAAEAAAAAAPn/AAABAAEAAAAAAPr/AAABAAEAAAABAPn/AAABAAEAAAABAPr/AAABAAEAAAD///r/AAAAAAEAAAD///n/AAAAAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAAAP7/AAABAAEAAAABAP7/AAABAAEAAAD///7/AAAAAAIAAAA=")
@@ -120,5 +125,15 @@ position = Vector2(568.302, 599.118)
 
 [node name="Camera2D" parent="Player" index="7"]
 metadata/_edit_lock_ = true
+
+[node name="Item" parent="." index="7" instance=ExtResource("15_u4omx")]
+position = Vector2(-279.698, 614.118)
+
+[node name="Crate" parent="." index="8" instance=ExtResource("16_f2uav")]
+position = Vector2(1511.3, 270.118)
+
+[node name="Toilet" parent="." index="9" instance=ExtResource("17_rt7d6")]
+position = Vector2(1600.3, 886.118)
+rotation = 1.83259
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

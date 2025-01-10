@@ -3,12 +3,16 @@ extends CharacterBody2D
 var can_laser: bool = true
 var can_grenade: bool = true
 
+
+
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 @onready var timer_laser = $LaserReloadTimer
 @onready var timer_grenade = $GrenadeReloadTimer
 
 signal laser(pos, direction)
 signal grenade(pos, direction)
+
+
 
 var speed = 800
 
@@ -58,5 +62,4 @@ func _on_timer_timeout() -> void:
 
 func _on_grenade_reload_timer_timeout() -> void:
 	can_grenade = true 
-	
 	
