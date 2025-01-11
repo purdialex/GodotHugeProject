@@ -32,6 +32,7 @@ project/assembly_name="Clear Code Tutorial"
 [global_group]
 
 Container=""
+Scouts=""
 
 [input]
 

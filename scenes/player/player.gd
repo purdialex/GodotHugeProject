@@ -29,7 +29,9 @@ func _process(_delta: float) -> void:
 	#direction input
 	var direction = Input.get_vector("left","right","up","down")
 	velocity = direction * speed
+	
 	move_and_slide()
+	Globals.player_position = global_position
 	var player_direction = (get_global_mouse_position() - position).normalized()
 	#laser shooting input
 	if(Input.is_action_pressed("primary action") && can_laser == true and Globals.laser_amount > 0):

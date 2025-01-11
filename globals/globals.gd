@@ -30,3 +30,4 @@ var grenade_amount = 5:
 		grenade_amount = value
 		grenade_change.emit()
 		
+var player_position: Vector2

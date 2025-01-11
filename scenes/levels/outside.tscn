@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://b31veboy7qkp8"]
+[gd_scene load_steps=23 format=4 uid="uid://b31veboy7qkp8"]
 
 [ext_resource type="PackedScene" uid="uid://bb0by4aroxlxb" path="res://scenes/levels/level.tscn" id="1_6765g"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_0qbyr"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://rwhnq5pbqnre" path="res://scenes/houses/house.tscn" id="13_kk6aw"]
 [ext_resource type="PackedScene" uid="uid://blv4gh3q8r42v" path="res://scenes/items/item.tscn" id="15_u4omx"]
 [ext_resource type="PackedScene" uid="uid://bf4aea636uuvd" path="res://scenes/container/crate.tscn" id="16_f2uav"]
+[ext_resource type="PackedScene" uid="uid://b0cl3x8nuruvx" path="res://scenes/enemies/scout.tscn" id="17_52e1c"]
 [ext_resource type="PackedScene" uid="uid://c6nowrjojx27o" path="res://scenes/container/toilet.tscn" id="17_rt7d6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl0q4"]
@@ -55,6 +56,17 @@ sources/0 = SubResource("TileSetAtlasSource_1uekm")
 
 [node name="Outside" instance=ExtResource("1_6765g")]
 script = ExtResource("2_0qbyr")
+
+[node name="Gate" parent="." index="1" instance=ExtResource("2_iycc7")]
+z_index = 1
+position = Vector2(-20.6979, -157.882)
+scale = Vector2(1.1, 1.1)
+metadata/_edit_lock_ = true
+
+[node name="House" parent="." index="2" instance=ExtResource("13_kk6aw")]
+z_index = 2
+position = Vector2(6144.3, 861.118)
+rotation = 2.09439
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -111,15 +123,6 @@ tile_set = SubResource("TileSet_k674x")
 [node name="SteamVent" parent="Ground" index="11" instance=ExtResource("11_saqtj")]
 position = Vector2(4853.3, 89.118)
 
-[node name="Gate" parent="." index="1" instance=ExtResource("2_iycc7")]
-position = Vector2(-20.6979, -157.882)
-scale = Vector2(1.1, 1.1)
-metadata/_edit_lock_ = true
-
-[node name="House" parent="." index="2" instance=ExtResource("13_kk6aw")]
-position = Vector2(6144.3, 861.118)
-rotation = 2.09439
-
 [node name="Crate" parent="." index="4" instance=ExtResource("16_f2uav")]
 position = Vector2(-811.698, 259.118)
 
@@ -127,13 +130,22 @@ position = Vector2(-811.698, 259.118)
 position = Vector2(1309.3, 984.118)
 rotation = -3.14159
 
-[node name="Player" parent="." index="7"]
-position = Vector2(568.302, 599.118)
-
-[node name="Camera2D" parent="Player" index="7"]
-metadata/_edit_lock_ = true
+[node name="Scout" parent="Enemies" index="0" instance=ExtResource("17_52e1c")]
+position = Vector2(4723.3, 717.118)
 
 [node name="Item" parent="." index="9" instance=ExtResource("15_u4omx")]
 position = Vector2(-279.698, 614.118)
 
+[node name="Player" parent="." index="10"]
+z_index = 2
+position = Vector2(3952.3, 1119.12)
+
+[node name="Camera2D" parent="Player" index="7"]
+metadata/_edit_lock_ = true
+
+[node name="Lights" parent="." index="11"]
+metadata/_edit_lock_ = true
+
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
+[connection signal="player_entered_house" from="House" to="." method="_on_house_player_entered_house"]
+[connection signal="player_exited_house" from="House" to="." method="_on_house_player_exited_house"]
