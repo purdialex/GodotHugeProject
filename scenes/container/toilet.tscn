@@ -20,3 +20,6 @@ texture = ExtResource("4_t6yee")
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(1, -4)
 shape = SubResource("CircleShape2D_4qgbg")
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
+position = Vector2(-8, 89)
