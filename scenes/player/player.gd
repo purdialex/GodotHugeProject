@@ -17,6 +17,8 @@ signal grenade(pos, direction)
 var speed = 800
 
 
+func hit():
+	Globals.health -= 10
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

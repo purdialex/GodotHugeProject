@@ -2,7 +2,7 @@ extends StaticBody2D
 class_name ItemContainer
 
 
-signal open(pos, direction)
+signal open(pos,direction)
 
 var opened: bool = false
 #Before ready function

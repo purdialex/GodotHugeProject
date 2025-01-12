@@ -6,14 +6,22 @@ signal grenade_change
 
 
 
-
+var player_vulnerable: bool = true
 var health = 60:
 	get:
 		return health
 	set(value):
-		health = value
+		if value > health:
+			health = min(value,100)
+		if player_vulnerable:
+			health = value
+			player_vulnerable = false
+			player_invulnerable_timer()
 		health_change.emit()
 		
+func player_invulnerable_timer():
+	await get_tree().create_timer(0.5).timeout
+	player_vulnerable = true
 
 var laser_amount = 20:
 	get:
